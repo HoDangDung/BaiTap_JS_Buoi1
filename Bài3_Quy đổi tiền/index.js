@@ -16,11 +16,12 @@
  * 
  */
 
-var moneyEL = document.getElementById("text-money");
+
 
 function handleEl() {
-    var money = moneyEL.value, sum, dollar = 23.500;
-    sum = (money * dollar).toFixed(3);
-    document.getElementById("sum").innerHTML = "<p>" + sum + ' VNĐ'+"</p>";
+    var moneyEL = +document.getElementById("text-money").value;
+    var sum, current = Intl.NumberFormat("vn-VN");
+    sum = moneyEL * 23500;
+    document.getElementById("sum").innerHTML = "<p>" + current.format(sum) + ' VNĐ'+"</p>";
     console.log(sum);
 }
